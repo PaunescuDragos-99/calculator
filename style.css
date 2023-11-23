@@ -1,0 +1,79 @@
+html, body{
+    min-height: 100%;
+}
+
+body{
+    background: linear-gradient(320deg, grey,green,rgb(23, 23, 204));
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    background-color: rgb(165, 159, 159,0.8);
+    flex-direction: column;
+    border: solid;
+    height: 420px;
+    width: 280px;
+    min-width: 280px;
+    padding: 20px 20px 0 20px;
+    gap: 14px;
+    border-radius: 7px;
+    margin-top: 70px;
+}
+
+.calculator-screen{
+    border: solid;
+    border-radius: 7px;
+    background-color: white;
+    padding:8px 12px 8px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 24px;
+}
+
+.calculator-numpad{
+    display: grid;
+    border: solid;
+    border-radius: 7px;
+    height: 320px;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: minmax(60px, 40px) repeat(5, 60px);
+    padding: 8px 4px 4px 9px;
+    gap: 4px;
+}
+
+.double-size{
+    grid-column: span 2;
+}
+
+.button{
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+.button:hover{
+    background-color:rgb(184, 209, 71);
+}
+
+.button:active{
+    background-color: orange;
+}
+
+.operator {
+    background-color: rgba(0, 0, 255, 0.4);
+}
+
+.operand-special{
+    background-color: rgba(21, 220, 235, 0.4);
+}
+
+.operand-delete{
+    background-color: rgb(201, 32, 32, 0.7);
+}
+.operand{
+    background-color: rgb(252, 68, 1, 0.7);
+}

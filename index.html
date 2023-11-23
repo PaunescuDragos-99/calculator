@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-screen">0</div>
+        <div class="calculator-numpad">
+            <button class="button operand-special value="AC" onclick="clean()">AC</button>
+            <button class="button operand-special" value="negat" onclick="negat()">+ / -</button>
+            <button class="button operand-special" value="multiply" onclick="equation('multiply')">*</button>
+            <button class="button operand-delete" value="delete" onclick="deleteValue()"><i class="material-icons">backspace</i></button>
+            <button class="button operator" value="7" onclick="number(`${this.value}`)">7</button>
+            <button class="button operator" value="8" onclick="number(`${this.value}`)">8</button>
+            <button class="button operator" value="9" onclick="number(`${this.value}`)">9</button>
+            <button class="button operand" value="plus" onclick="equation('plus')">+</button>
+            <button class="button operator" value="4" onclick="number(`${this.value}`)">4</button>
+            <button class="button operator" value="5" onclick="number(`${this.value}`)">5</button>
+            <button class="button operator" value="6" onclick="number(`${this.value}`)">6</button>
+            <button class="button operand" value="minus" onclick="equation('minus')">-</button>
+            <button class="button operator" value="1" onclick="number(`${this.value}`)">1</button>
+            <button class="button operator" value="2" onclick="number(`${this.value}`)">2</button>
+            <button class="button operator" value="3" onclick="number(`${this.value}`)">3</button>
+            <button class="button operand" value="/" onclick="equation('division')">/</button>
+            <button class="button operator double-size" value="0" onclick="number(`${this.value}`)">0</button>
+            <button class="button operator" value="dot" onclick="">.</button>
+            <button class="button operand" value="equal" onclick="equal()">=</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
