@@ -3,13 +3,14 @@ let operatorBefore = 0;
 let lastSymbol = "";
 let lastCalled = "notEqual"
 let multiplyWasCalled = false;
+let decimalNumber = false;
 
 const screen = document.querySelector(".calculator-screen");
 
 function equation(symbol){
     lastCalled = "notEqual";
     if(operatorBefore == 0){
-        operatorBefore += parseInt(curentOperator);
+        operatorBefore += parseFloat(curentOperator);
     }
     if(multiplyWasCalled == true && symbol == "minus" && lastCalled == "Equal"){
         lastSymbol = "multiply-negat";
@@ -76,26 +77,36 @@ function deleteValue(){
 function equal(){
     lastCalled = "equal"
     if(lastSymbol == "plus"){
-        operatorBefore += parseInt(curentOperator);
+        operatorBefore += parseFloat(curentOperator);
         curentOperator = "0";
         screen.textContent = `${operatorBefore}`;
         console.log(operatorBefore);
     }else if(lastSymbol == "minus"){
-        operatorBefore -= parseInt(curentOperator);
+        operatorBefore -= parseFloat(curentOperator);
         curentOperator = "0";
         screen.textContent = `${operatorBefore}`;
     }else if (lastSymbol == "multiply"){
-        operatorBefore *= parseInt(curentOperator);
+        operatorBefore *= parseFloat(curentOperator);
         curentOperator = "0";
         screen.textContent = `${operatorBefore}`;
     }else if (lastSymbol == "division"){
-        operatorBefore /= parseInt(curentOperator);
+        operatorBefore /= parseFloat(curentOperator);
         curentOperator = "0";
         screen.textContent = `${operatorBefore}`;
     }else if (lastSymbol = "multiply-negat"){
-        operatorBefore *= -parseInt(curentOperator);
+        operatorBefore *= -parseFloat(curentOperator);
         curentOperator = "0";
         screen.textContent = `${operatorBefore}`;
+    }
+}
+
+function addDecimal(bool){
+    if(bool == true && decimalNumber == false){
+        curentOperator += '.';
+        decimalNumber = true;
+        console.log(decimalNumber);
+        console.log("number", curentOperator);
+        screen.textContent = `${curentOperator}`;
     }
 }
 
@@ -105,6 +116,7 @@ function number(value){
     }
     if(curentOperator == "0"){
         curentOperator = "";
+        decimalNumber = false;
     }
     curentOperator += value;
     screen.textContent = `${curentOperator}`;
