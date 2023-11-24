@@ -8,8 +8,10 @@ const screen = document.querySelector(".calculator-screen");
 
 function equation(symbol){
     lastCalled = "notEqual";
-    operatorBefore += parseInt(curentOperator);
-    if(multiplyWasCalled == true && symbol == "minus"){
+    if(operatorBefore == 0){
+        operatorBefore += parseInt(curentOperator);
+    }
+    if(multiplyWasCalled == true && symbol == "minus" && lastCalled == "Equal"){
         lastSymbol = "multiply-negat";
         screen.textContent = `-`;
         curentOperator = "0";
@@ -27,6 +29,7 @@ function equation(symbol){
         lastSymbol = "minus";
         screen.textContent = `-`;
         curentOperator = "0";
+        multiplyWasCalled = false;
     }else if(symbol == "division"){
         lastSymbol = "division";
         screen.textContent = `/`;
@@ -76,6 +79,7 @@ function equal(){
         operatorBefore += parseInt(curentOperator);
         curentOperator = "0";
         screen.textContent = `${operatorBefore}`;
+        console.log(operatorBefore);
     }else if(lastSymbol == "minus"){
         operatorBefore -= parseInt(curentOperator);
         curentOperator = "0";
