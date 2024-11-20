@@ -7,6 +7,7 @@ let decimalNumber = false;
 let inputZero = false;
 
 // TEST
+const TEST = "TEST ";
 
 const screenInfo = document.querySelector(".current-info");
 const pastInfo = document.querySelector(".past-info");
